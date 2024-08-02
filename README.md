@@ -80,6 +80,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 <ol>
     <li>Buat database mysql dengan nama rs_puri_bunda2</li>
+    <li>Sesuaikan file .env agar bisa terkoneksi ke database</li>
     <li>Buka cmd lalu masuk ke folder project</li>
     <li>Composer i</li>
     <li>php artisan migrate</li>
