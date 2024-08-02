@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
+use App\Models\Position;
 use App\Models\Unit;
 use App\Models\User;
 use Filament\Forms;
@@ -37,8 +38,14 @@ class UserResource extends Resource
                     ->visibleOn('create'),
                 Forms\Components\Select::make('unit_id')
                     ->label('Unit')
-                    ->options(Unit::all()->pluck('unit_name', 'id')),
-                Forms\Components\DatePicker::make('join_date')
+                    ->options(Unit::all()->pluck('unit_name', 'id'))
+                    ->searchable(),
+                Forms\Components\DatePicker::make('join_date'),
+                Forms\Components\CheckboxList::make('positions')
+                    ->relationship(titleAttribute: 'position_name')
+                    ->label('Jabatan')
+                    ->options(Position::all()->pluck('position_name', 'id')->toArray())
+                    ->columns(3),
             ]);
     }
 

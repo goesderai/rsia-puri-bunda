@@ -7,7 +7,7 @@ use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -29,9 +29,9 @@ class User extends Authenticatable implements FilamentUser
         'join_date'
     ];
 
-    public function positions(): HasMany
+    public function positions(): BelongsToMany
     {
-        return $this->hasMany(Position::class);
+        return $this->belongsToMany(Position::class);
     }
 
     public function unit(): BelongsTo
@@ -59,6 +59,7 @@ class User extends Authenticatable implements FilamentUser
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'positions' => 'array'
         ];
     }
 
