@@ -75,3 +75,18 @@ via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilitie
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Getting Started
+
+<ol>
+    <li>Buat database mysql dengan nama rs_puri_bunda2</li>
+    <li>Buka cmd lalu masuk ke folder project</li>
+    <li>Composer i</li>
+    <li>php artisan migrate</li>
+    <li>php artisan db:seed</li>
+    <li>php artisan db:seed --class=UnitSeeder</li>
+    <li>php artisan db:seed --class=PositionSeeder</li>
+    <li>php artisan db:seed --class=UserSeeder</li>
+    <li>php artisan db:seed --class=LoginHistorySeeder</li>
+    <li>php artisan serve</li>
+</ol>
